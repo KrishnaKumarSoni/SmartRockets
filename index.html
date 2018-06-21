@@ -1,0 +1,91 @@
+<html>
+<head>
+	<title>SMART ROCKETS</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+	<style>
+	canvas{
+		background: #000;
+	}
+	body{
+		margin:0 0;
+		padding:0 0;
+	}
+	#genNo, #popSizeInput, #popSize, #lifeSpan, #lifeSpanInput, #reset, #mutationInput, #mutation{
+		position: absolute;
+		font-size: 24;
+		font-family: 'Lato', sans-serif;
+		font-weight: 500;
+		color: white;
+	}
+	#genNo{
+		top: 50px;
+		left: 100px;
+		z-index: 9999;
+	}
+	#popSizeInput, #popSize, #lifeSpan, #lifeSpanInput, #reset, #mutationInput, #mutation{
+		left: 100px;
+		z-index: 9999;
+		top: 90px;
+		background: none;
+		border-radius: 3px;
+		height: 25px;
+	}
+	#popSizeInput, #lifeSpanInput, #mutationInput{
+		left: 270px;
+		width: 60px;
+	}
+	#lifeSpanInput, #lifeSpan{
+		top: 130px;
+	}
+	#mutationInput, #mutation{
+		top: 170px;
+	}
+
+	#reset{
+		top: 210px;
+		left: 160px;
+		border: none;
+		font-weight: 900;
+		font-size: 30px;
+		height: 50px;
+		cursor: pointer;
+	}
+
+	#instructions{
+		border: 2px solid white;
+		width: 280;
+		height: 280;
+		position: absolute;
+		z-index: 9999;
+		top: 290px;
+		left: 70px;
+		border-radius: 5px;
+		font-size: 16px;
+		font-family: 'Lato', sans-serif;
+		font-weight: 400;
+		color: white;
+		padding-right: 10px;
+	}
+	
+	button:focus {outline:0;}
+	</style>
+</head>
+
+<body>
+	<canvas id="canvas1"></canvas>
+	<div id="genNo">*</div>
+	<div><input type="text" id="popSizeInput"><label id="popSize">POPULATION: </label></div>
+	<div><input type="text" id="lifeSpanInput"><label id="lifeSpan">LIFESPAN: </label></div>
+	<div><input type="text" id="mutationInput" max="0.90" min="0.01" maxlength="4"><label id="mutation">MUTATION: </label></div>
+	<input type="submit" value="RESET" onclick="reset()" id="reset">
+
+	<div class="instructions" id="instructions" style="opacity: 1;">	
+		<ul>
+			<li>These rockets use a genetic algorithm to evolve in each generation so as to reach the given target, crossing through all the obstacles.</li>
+			<li>You can change the various parameters, affecting the evolution, by entering them in the above section.</li>
+		</ul>
+	</div>
+
+	<script src="java/java.js" type="text/javascript"></script>
+</body>
+</html>
